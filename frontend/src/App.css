@@ -1,0 +1,281 @@
+.app {
+  min-height: 100vh;
+  padding: 72px 10%;
+  background: linear-gradient(135deg, #f4fbf7, #eef5ff);
+  color: #172b21;
+}
+
+.hero {
+  max-width: 760px;
+  margin: 0 auto 70px;
+}
+
+.eyebrow {
+  margin: 0 0 14px;
+  color: #167548;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2.8rem, 7vw, 5.4rem);
+  line-height: 1.02;
+}
+
+.description {
+  max-width: 600px;
+  margin: 24px 0;
+  color: #52645a;
+  font-size: 1.15rem;
+  line-height: 1.7;
+}
+
+.primary-button {
+  border: 0;
+  border-radius: 10px;
+  padding: 15px 22px;
+  background: #167548;
+  color: white;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.primary-button:hover {
+  background: #105c38;
+}
+
+.note {
+  color: #718075;
+  font-size: 0.9rem;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.steps article {
+  padding: 26px;
+  border: 1px solid #d9e5dc;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.75);
+}
+
+.steps span {
+  color: #167548;
+  font-weight: 800;
+}
+
+.steps h2 {
+  margin-bottom: 8px;
+}
+
+.steps p {
+  margin: 0;
+  color: #52645a;
+  line-height: 1.6;
+}
+
+@media (max-width: 700px) {
+  .app {
+    padding: 48px 7%;
+  }
+
+  .steps {
+    grid-template-columns: 1fr;
+  }
+}
+
+.file-input {
+  display: none;
+}
+
+.image-preview {
+  max-width: 520px;
+  margin-top: 24px;
+  padding: 18px;
+  border: 1px solid #d9e5dc;
+  border-radius: 14px;
+  background: white;
+}
+
+.image-preview p {
+  margin-top: 0;
+  color: #52645a;
+}
+
+.image-preview img {
+  display: block;
+  width: 100%;
+  max-height: 360px;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+.analyze-button {
+  margin-top: 16px;
+}
+
+.result-message {
+  margin: 16px 0 0;
+  color: #167548;
+  font-weight: 700;
+}
+
+.result-box {
+  margin-top: 16px;
+}
+
+.result-box h3 {
+  margin-bottom: 8px;
+}
+
+.result-box pre {
+  max-height: 220px;
+  overflow: auto;
+  padding: 14px;
+  border-radius: 8px;
+  background: #172b21;
+  color: #e9fff1;
+  font-family: Consolas, monospace;
+  text-align: left;
+  white-space: pre-wrap;
+}
+
+.field-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin: 14px 0;
+}
+
+.field-card {
+  padding: 14px;
+  border: 1px solid #d9e5dc;
+  border-radius: 10px;
+  background: #f9fffb;
+}
+
+.field-card p {
+  margin: 0 0 6px;
+  color: #52645a;
+  font-size: 0.85rem;
+}
+
+.field-card strong {
+  color: #172b21;
+}
+
+.missing-fields {
+  color: #a15d00;
+  font-weight: 700;
+}
+
+@media (max-width: 700px) {
+  .field-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.compliance-card {
+  margin: 20px 0;
+  padding: 20px;
+  border-radius: 14px;
+}
+
+.compliance-card h2 {
+  margin: 4px 0 10px;
+}
+
+.compliance-card p {
+  margin: 6px 0;
+}
+
+.compliance-label {
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.compliant {
+  border: 1px solid #8ad4a8;
+  background: #e9f9ef;
+  color: #126238;
+}
+
+.needs-review {
+  border: 1px solid #f0c56a;
+  background: #fff7df;
+  color: #805500;
+}
+
+.violation {
+  border: 1px solid #f29a9a;
+  background: #fff0f0;
+  color: #a12a2a;
+}
+
+.compliance-card {
+  margin: 20px 0;
+  padding: 20px;
+  border-radius: 14px;
+}
+
+.compliance-card h2 {
+  margin: 4px 0 10px;
+}
+
+.compliance-card p {
+  margin: 6px 0;
+}
+
+.compliance-label {
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.compliant {
+  border: 1px solid #8ad4a8;
+  background: #e9f9ef;
+  color: #126238;
+}
+
+.needs-review {
+  border: 1px solid #f0c56a;
+  background: #fff7df;
+  color: #805500;
+}
+
+.violation {
+  border: 1px solid #f29a9a;
+  background: #fff0f0;
+  color: #a12a2a;
+}
+
+.report-button {
+  margin-top: 14px;
+  border: 0;
+  border-radius: 8px;
+  padding: 11px 15px;
+  background: #172b21;
+  color: white;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.report-button:hover {
+  background: #0d1b13;
+}
+
+.potential-violation {
+  border: 1px solid #f29a9a;
+  background: #fff0f0;
+  color: #a12a2a;
+}
