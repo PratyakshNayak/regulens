@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import "./App.css";
+const API_URL = import.meta.env.VITE_API_URL || "http://127.0.0.1:8000";
 
 function App() {
   const fileInputRef = useRef(null);
@@ -27,7 +28,7 @@ function App() {
     formData.append("image", selectedImage.file);
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/analyze", {
+      const response = await fetch(`${API_URL}/analyze`, {
         method: "POST",
         body: formData,
       });
@@ -44,7 +45,7 @@ function App() {
   async function downloadReport() {
     if (!analysisResult?.compliance) return;
 
-    const response = await fetch("http://127.0.0.1:8000/report", {
+    const response = await fetch(`${API_URL}/report`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

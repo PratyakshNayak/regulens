@@ -1,3 +1,4 @@
+import os
 import io
 from html import escape
 
@@ -17,13 +18,23 @@ from rules.catalog import FOOD_DOMESTIC_PROFILE, evaluate_rules, extract_declara
 
 app = FastAPI()
 
-pytesseract.pytesseract.tesseract_cmd = (
-    r"C:\Program Files\Tesseract-OCR\tesseract.exe"
+tesseract_command = os.getenv(
+    "TESSERACT_CMD",
+    r"C:\Program Files\Tesseract-OCR\tesseract.exe",
 )
+
+pytesseract.pytesseract.tesseract_cmd = tesseract_command
+
+allowed_origins = ["http://localhost:5173"]
+
+frontend_url = os.getenv("FRONTEND_URL")
+
+if frontend_url:
+    allowed_origins.append(frontend_url.rstrip("/"))
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173"],
+    allow_origins=allowed_origins,
     allow_methods=["*"],
     allow_headers=["*"],
 )
